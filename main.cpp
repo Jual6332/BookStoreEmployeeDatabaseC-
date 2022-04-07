@@ -9,20 +9,30 @@ class Employee {
 
   public:
 
-  void setSalary(int dollarAmount){
-    salary = dollarAmount;
+   /* Setter Methods */
+  void setName(std::string nm){
+    name = nm;
   }
 
   void setJobTitle(std::string role){
     jobTitle = role;
   }
 
-  int getSalary(){
-    return salary;
+  void setSalary(int dollarAmount){
+    salary = dollarAmount;
+  }
+
+  /* Getter Methods */
+  std::string getName(){
+    return name;
   }
 
   std::string getJobTitle(){
     return jobTitle;
+  }
+
+  int getSalary(){
+    return salary;
   }
 
 };
@@ -51,14 +61,25 @@ class Customer {
 };
 
 int main() {
-  Employee newEmployee;
-  newEmployee.setJobTitle("Supervisor II");
-  newEmployee.setSalary(40000);
+  Employee newEmployee1;
+  newEmployee1.setName("Richard Sventhal");
+  newEmployee1.setJobTitle("Supervisor II");
+  newEmployee1.setSalary(40000);
+
+  Employee newEmployee2;
+  newEmployee2.setJobTitle("Cashier");
+  newEmployee2.setSalary(27000);
+
+  Employee EmployeeArray[2];
+
+  EmployeeArray[0] = newEmployee1;
+
+  std::cout << "Employee1 name is " << EmployeeArray[0].getName() << std::endl;
 
   Customer newCustomer;
   newCustomer.setWalletAmount(237);
   newCustomer.makeTransaction(115);
   
-  std::cout << "New employee salary is: "<< newEmployee.getSalary() << std::endl;
+  std::cout << "New employee salary is: "<< newEmployee1.getSalary() << std::endl;
   //std::cout << "Hello World!\n";
 }

@@ -5,6 +5,7 @@ class Employee {
   private:
     std::string name;
     std::string jobTitle;
+    std::string timeEmployedAtCompany;
     int salary;
 
   public:
@@ -16,6 +17,10 @@ class Employee {
 
   void setJobTitle(std::string role){
     jobTitle = role;
+  }
+
+  void setTimeEmployedAtCompany(std::string time){
+    timeEmployedAtCompany = time; // Value in years
   }
 
   void setSalary(int dollarAmount){
@@ -31,6 +36,10 @@ class Employee {
     return jobTitle;
   }
 
+  std::string getTimeEmployedAtCompany(){
+    return timeEmployedAtCompany; // Value in years
+  }
+
   int getSalary(){
     return salary;
   }
@@ -43,12 +52,21 @@ class Customer {
     int walletAmount;
 
   public:
+  void setName(std::string nm){
+    name = nm;
+  }
+
   void setWalletAmount(int cash){
     walletAmount = cash;
   }
 
+  /* Getter Methods */
   int getWalletAmoount(){
     return walletAmount;
+  }
+
+  std::string getName(){
+    return name;
   }
 
   void makeTransaction(int purchaseAmount){
@@ -64,6 +82,7 @@ int main() {
   Employee newEmployee1;
   newEmployee1.setName("Richard Sventhal");
   newEmployee1.setJobTitle("Supervisor II");
+  newEmployee1.setTimeEmployedAtCompany(4);
   newEmployee1.setSalary(40000);
 
   Employee newEmployee2;
@@ -77,11 +96,12 @@ int main() {
   EmployeeArray[1] = newEmployee2;
 
   std::cout << "Employee1 name is " << EmployeeArray[0].getName() << std::endl;
-  std::cout << "Employee1 name is " << EmployeeArray[1].getName() << std::endl;
+  std::cout << "Employee2 name is " << EmployeeArray[1].getName() << std::endl;
 
   std::cout << "New employee salary is: "<< newEmployee1.getSalary() << std::endl;
 
   Customer newCustomer;
+  newCustomer.setName("Gloria Bakerson");
   newCustomer.setWalletAmount(237);
   newCustomer.makeTransaction(15);
 

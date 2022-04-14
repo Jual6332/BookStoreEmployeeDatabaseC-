@@ -79,10 +79,11 @@ int main() {
   std::cout << "Employee1 name is " << EmployeeArray[0].getName() << std::endl;
   std::cout << "Employee1 name is " << EmployeeArray[1].getName() << std::endl;
 
+  std::cout << "New employee salary is: "<< newEmployee1.getSalary() << std::endl;
+
   Customer newCustomer;
   newCustomer.setWalletAmount(237);
-  newCustomer.makeTransaction(115);
-  
-  std::cout << "New employee salary is: "<< newEmployee1.getSalary() << std::endl;
-  //std::cout << "Hello World!\n";
+  newCustomer.makeTransaction(15);
+
+  return 0;
 }

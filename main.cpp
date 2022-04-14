@@ -96,12 +96,15 @@ int main() {
   EmployeeArray[0] = newEmployee1;
   EmployeeArray[1] = newEmployee2;
 
+  /* Print Employee Names*/
   std::cout << "Employee1 name is " << EmployeeArray[0].getName() << std::endl;
   std::cout << "Employee2 name is " << EmployeeArray[1].getName() << std::endl;
 
-  std::cout << "New employee, Employee1's, salary is: "<< newEmployee1.getSalary() << std::endl;
-  std::cout << "New employee, Employee2's, salary is: "<< newEmployee2.getSalary() << std::endl;
+  /* Print Employee Salaries*/
+  std::cout << "New employee," << EmployeeArray[0].getName() << "'s, salary is: " << EmployeeArray[0].getSalary() << std::endl;
+  std::cout << "New employee," << EmployeeArray[1].getName() << "'s, salary is: " << EmployeeArray[1].getSalary() << std::endl;
 
+  /* Add New Customer to the Database*/
   Customer newCustomer;
   newCustomer.setName("Gloria Bakerson");
   newCustomer.setWalletAmount(237);

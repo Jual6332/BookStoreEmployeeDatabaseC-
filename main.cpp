@@ -67,14 +67,17 @@ int main() {
   newEmployee1.setSalary(40000);
 
   Employee newEmployee2;
+  newEmployee2.setName("Melissa Robinson");
   newEmployee2.setJobTitle("Cashier");
   newEmployee2.setSalary(27000);
 
   Employee EmployeeArray[2];
 
   EmployeeArray[0] = newEmployee1;
+  EmployeeArray[1] = newEmployee2;
 
   std::cout << "Employee1 name is " << EmployeeArray[0].getName() << std::endl;
+  std::cout << "Employee1 name is " << EmployeeArray[1].getName() << std::endl;
 
   Customer newCustomer;
   newCustomer.setWalletAmount(237);

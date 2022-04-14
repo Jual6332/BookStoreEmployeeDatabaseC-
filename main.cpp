@@ -82,12 +82,13 @@ int main() {
   Employee newEmployee1;
   newEmployee1.setName("Richard Sventhal");
   newEmployee1.setJobTitle("Supervisor II");
-  newEmployee1.setTimeEmployedAtCompany(4);
+  newEmployee1.setTimeEmployedAtCompany("4 years 1 month");
   newEmployee1.setSalary(40000);
 
   Employee newEmployee2;
   newEmployee2.setName("Melissa Robinson");
   newEmployee2.setJobTitle("Cashier");
+  newEmployee2.setTimeEmployedAtCompany("2 years 4 months");
   newEmployee2.setSalary(27000);
 
   Employee EmployeeArray[2];
@@ -98,7 +99,8 @@ int main() {
   std::cout << "Employee1 name is " << EmployeeArray[0].getName() << std::endl;
   std::cout << "Employee2 name is " << EmployeeArray[1].getName() << std::endl;
 
-  std::cout << "New employee salary is: "<< newEmployee1.getSalary() << std::endl;
+  std::cout << "New employee, Employee1's, salary is: "<< newEmployee1.getSalary() << std::endl;
+  std::cout << "New employee, Employee2's, salary is: "<< newEmployee2.getSalary() << std::endl;
 
   Customer newCustomer;
   newCustomer.setName("Gloria Bakerson");

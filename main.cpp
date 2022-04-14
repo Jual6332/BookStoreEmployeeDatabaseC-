@@ -101,14 +101,22 @@ int main() {
   std::cout << "Employee2 name is " << EmployeeArray[1].getName() << std::endl;
 
   /* Print Employee Salaries*/
-  std::cout << "New employee," << EmployeeArray[0].getName() << "'s, salary is: " << EmployeeArray[0].getSalary() << std::endl;
-  std::cout << "New employee," << EmployeeArray[1].getName() << "'s, salary is: " << EmployeeArray[1].getSalary() << std::endl;
+  std::cout << "New employee, " << EmployeeArray[0].getName() << "'s salary is: " << EmployeeArray[0].getSalary() << std::endl;
+  std::cout << "New employee, " << EmployeeArray[1].getName() << "'s salary is: " << EmployeeArray[1].getSalary() << std::endl;
 
   /* Add New Customer to the Database*/
   Customer newCustomer;
   newCustomer.setName("Gloria Bakerson");
   newCustomer.setWalletAmount(237);
-  newCustomer.makeTransaction(15);
+
+  /* Customer wants to Make a Purchase*/
+  int purchaseAmount = 15;
+  std::string purchaseBookTitle = "The Grapes of Wrath";
+  std::string purchaseBookAuthor = "John Steinbeck";
+
+  std::cout << "This customer would like to purchase " << purchaseBookTitle << " written by " << purchaseBookAuthor << std::endl;
+  std::cout << "This customer has $" << newCustomer.getWalletAmoount() << " dollars in his wallet."<< std::endl;
+  std::cout << "They want to make a purchase of $" << purchaseAmount << std::endl;
 
   return 0;
 }

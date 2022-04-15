@@ -13,8 +13,16 @@ class Book {
       title = t;
     }
 
+    void setAuthor(std::string a){
+      author = a;
+    }
+
     std::string getTitle(){
       return title;  
+    }
+
+    std::string getAuthor(){
+      return author;
     }
 }
 

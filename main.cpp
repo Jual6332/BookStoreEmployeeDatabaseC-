@@ -7,6 +7,15 @@ class Book {
     std::string author;
     int year;
     std::string publisher;
+
+  public:
+    void setTitle(std::string t){
+      title = t;
+    }
+
+    std::string getTitle(){
+      return title;  
+    }
 }
 
 class Employee {

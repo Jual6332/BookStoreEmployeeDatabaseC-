@@ -151,16 +151,19 @@ int main() {
   EmployeeArray[1] = newEmployee2;
 
   /* Print Employee Names*/
-  std::cout << "Employee1 name is " << EmployeeArray[0].getName() << std::endl;
-  std::cout << "Employee2 name is " << EmployeeArray[1].getName() << std::endl;
+  for (int i=0; i<2;i++){
+    std::cout << "Employee name is " << EmployeeArray[i].getName() << std::endl;
+  }
 
   /* Print Employee Titles */
-  std::cout << "Employee1 works as a " << EmployeeArray[0].getJobTitle() << std::endl; 
-  std::cout << "Employee2 works as a " << EmployeeArray[1].getJobTitle() << std::endl;
+  for (int i=0; i<2;i++){
+    std::cout << "Employee works as a " << EmployeeArray[i].getJobTitle() << std::endl;
+  }
 
   /* Print Employee Salaries*/
-  std::cout << "Employee1, " << EmployeeArray[0].getName() << "'s salary is: " << EmployeeArray[0].getSalary() << std::endl;
-  std::cout << "Employee2, " << EmployeeArray[1].getName() << "'s salary is: " << EmployeeArray[1].getSalary() << std::endl;
+  for (int i=0; i<2;i++){
+    std::cout << EmployeeArray[i].getName() << "'s salary is: " << EmployeeArray[i].getSalary() << std::endl;
+  }
 
   std::cout << std::endl;
 
@@ -180,7 +183,7 @@ int main() {
   std::cout << "This customer would like to purchase " << purchaseBookTitle << " written by " << purchaseBookAuthor << std::endl;
   std::cout << "This customer has $" << newCustomer.getWalletAmoount() << " dollars in his wallet."<< std::endl;
   std::cout << "This would be a purchase of $" << purchaseAmount << std::endl;
-  std::cout << EmployeeArray[1].getName() << " helps at the register to ring up the purchase." << std::endl;
+  std::cout << EmployeeArray[1].getName() << " (Cashier) helps at the register to ring up the purchase." << std::endl;
 
   return 0;
 }

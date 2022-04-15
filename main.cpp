@@ -24,7 +24,10 @@ class Book {
     std::string getAuthor(){
       return author;
     }
-}
+};
+
+
+// Possible modification, print method so not relying on accessing the data. PrintName so data does not have to be disclosed. Idk.
 
 class Employee {
   private:
@@ -103,6 +106,32 @@ class Customer {
   }
 };
 
+// Function: 
+// Params: 
+/*
+Employee * filterCashiersFromEmployeeList(Employee *EmployeeArray){
+  //int sizeEmployeeArray = sizeof(EmployeeArray)/sizeof(EmployeeArray[0]); // The size of the array, the number of employees
+  int count = 0;
+
+  for (int i=0; i<2; i++){
+    if (EmployeeArray[i].getJobTitle() == "Cashier"){
+      count++;
+    }
+  }
+
+  static Employee cashiersArray[count]; //
+  int index = 0;
+
+  for (int i=0; i<2; i++){
+    if (EmployeeArray[i].getJobTitle() == "Cashier"){
+      cashiersArray[index] = EmployeeArray[i];
+    }
+  }
+
+  return cashiersArray;
+}
+*/
+
 int main() {
   Employee newEmployee1;
   newEmployee1.setName("Richard Sventhal");
@@ -135,6 +164,9 @@ int main() {
 
   std::cout << std::endl;
 
+  /* Filter Cashiers from Array */
+
+
   /* Add New Customer to the Database*/
   Customer newCustomer;
   newCustomer.setName("Gloria Bakerson");
@@ -147,7 +179,8 @@ int main() {
 
   std::cout << "This customer would like to purchase " << purchaseBookTitle << " written by " << purchaseBookAuthor << std::endl;
   std::cout << "This customer has $" << newCustomer.getWalletAmoount() << " dollars in his wallet."<< std::endl;
-  std::cout << "They want to make a purchase of $" << purchaseAmount << std::endl;
+  std::cout << "This would be a purchase of $" << purchaseAmount << std::endl;
+  std::cout << EmployeeArray[1].getName() << " helps at the register to ring up the purchase." << std::endl;
 
   return 0;
 }

@@ -100,9 +100,15 @@ int main() {
   std::cout << "Employee1 name is " << EmployeeArray[0].getName() << std::endl;
   std::cout << "Employee2 name is " << EmployeeArray[1].getName() << std::endl;
 
+  /* Print Employee Titles */
+  std::cout << "Employee1 works as a " << EmployeeArray[0].getJobTitle() << std::endl; 
+  std::cout << "Employee2 works as a " << EmployeeArray[1].getJobTitle() << std::endl;
+
   /* Print Employee Salaries*/
-  std::cout << "New employee, " << EmployeeArray[0].getName() << "'s salary is: " << EmployeeArray[0].getSalary() << std::endl;
-  std::cout << "New employee, " << EmployeeArray[1].getName() << "'s salary is: " << EmployeeArray[1].getSalary() << std::endl;
+  std::cout << "Employee1, " << EmployeeArray[0].getName() << "'s salary is: " << EmployeeArray[0].getSalary() << std::endl;
+  std::cout << "Employee2, " << EmployeeArray[1].getName() << "'s salary is: " << EmployeeArray[1].getSalary() << std::endl;
+
+  std::cout << std::endl;
 
   /* Add New Customer to the Database*/
   Customer newCustomer;

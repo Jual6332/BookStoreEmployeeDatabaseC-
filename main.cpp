@@ -5,10 +5,12 @@ class Book {
   private:
     std::string title;
     std::string author;
+    double cost;
     int year;
     std::string publisher;
 
   public:
+    /* Setter Methods*/
     void setTitle(std::string t){
       title = t;
     }
@@ -17,12 +19,37 @@ class Book {
       author = a;
     }
 
+    void setCost(double c){
+      cost = c;
+    }
+
+    void setYear(std::string y){
+      year = y;
+    }
+
+    void setPublisher(std::string p){
+      publisher = p;
+    }
+
+    /* Getter Methods */
     std::string getTitle(){
       return title;  
     }
 
     std::string getAuthor(){
       return author;
+    }
+
+    double getCost(){
+      return cost;
+    }
+
+    std::string getYear(){
+      return year;
+    }
+
+    std::string getPublisher(){
+      return publisher;
     }
 };
 
@@ -180,6 +207,11 @@ int main() {
   std::string purchaseBookTitle = "The Grapes of Wrath";
   std::string purchaseBookAuthor = "John Steinbeck";
 
+  Book book1;
+  book1.setTitle("The Grapes of Wrath");
+  book1.setAuthor("John Steinbeck");
+
+  /* Print Transaction Details */
   std::cout << "This customer would like to purchase " << purchaseBookTitle << " written by " << purchaseBookAuthor << std::endl;
   std::cout << "This customer has $" << newCustomer.getWalletAmoount() << " dollars in his wallet."<< std::endl;
   std::cout << "This would be a purchase of $" << purchaseAmount << std::endl;

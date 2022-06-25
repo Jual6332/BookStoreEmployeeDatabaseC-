@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 
+const int NUMBER_OF_EMPLOYEES = 2;
+
 class Book {
   private:
     std::string title;
@@ -23,7 +25,7 @@ class Book {
       cost = c;
     }
 
-    void setYear(std::string y){
+    void setYear(int y){
       year = y;
     }
 
@@ -44,7 +46,7 @@ class Book {
       return cost;
     }
 
-    std::string getYear(){
+    int getYear(){
       return year;
     }
 
@@ -116,20 +118,28 @@ class Customer {
   }
 
   /* Getter Methods */
-  int getWalletAmoount(){
+  // Function: getWalletAmount()
+  // Params: None
+  // Outputs: 
+  // 1. walletAmount - Represents amount of money in customer's wallet. A private variable in the Customer class.
+  int getWalletAmount(){
     return walletAmount;
   }
 
+  // Function: getName()
+  // Params: None
+  // Outputs: 
+  // 1. name - Represents the amount of money in the customer's wallet. A private variable in the Customer class.
   std::string getName(){
     return name;
   }
 
-  void makeTransaction(int purchaseAmount){
-    std::cout << "This customer has $" << walletAmount<< " dollars in his wallet."<<std::endl;
-    std::cout << "They want to make a purchase of $" << purchaseAmount << std::endl;
-    //if ( walletAmount){
-      
-    //}
+  // Function: makePurchase()
+  // Params: None
+  // Outputs: 
+  // 1. purchaseAmount - Represents the amount the customer's item costs. 
+  void makePurchase(int purchaseAmount){
+    walletAmount -= purchaseAmount;
   }
 };
 
@@ -145,6 +155,8 @@ Employee * filterCashiersFromEmployeeList(Employee *EmployeeArray){
       count++;
     }
   }
+
+  // These code blocks need fixing - 6/25/2022
 
   static Employee cashiersArray[count]; //
   int index = 0;
@@ -172,23 +184,23 @@ int main() {
   newEmployee2.setTimeEmployedAtCompany("2 years 4 months");
   newEmployee2.setSalary(27000);
 
-  Employee EmployeeArray[2];
+  Employee EmployeeArray[NUMBER_OF_EMPLOYEES];
 
   EmployeeArray[0] = newEmployee1;
   EmployeeArray[1] = newEmployee2;
 
   /* Print Employee Names*/
-  for (int i=0; i<2;i++){
+  for (int i=0; i<NUMBER_OF_EMPLOYEES;i++){
     std::cout << "Employee name is " << EmployeeArray[i].getName() << std::endl;
   }
 
   /* Print Employee Titles */
-  for (int i=0; i<2;i++){
+  for (int i=0; i<NUMBER_OF_EMPLOYEES;i++){
     std::cout << "Employee works as a " << EmployeeArray[i].getJobTitle() << std::endl;
   }
 
   /* Print Employee Salaries*/
-  for (int i=0; i<2;i++){
+  for (int i=0; i<NUMBER_OF_EMPLOYEES;i++){
     std::cout << EmployeeArray[i].getName() << "'s salary is: " << EmployeeArray[i].getSalary() << std::endl;
   }
 
@@ -208,14 +220,34 @@ int main() {
   std::string purchaseBookAuthor = "John Steinbeck";
 
   Book book1;
-  book1.setTitle("The Grapes of Wrath");
-  book1.setAuthor("John Steinbeck");
+  book1.setTitle(purchaseBookTitle);
+  book1.setAuthor(purchaseBookAuthor);
 
   /* Print Transaction Details */
   std::cout << "This customer would like to purchase " << purchaseBookTitle << " written by " << purchaseBookAuthor << std::endl;
-  std::cout << "This customer has $" << newCustomer.getWalletAmoount() << " dollars in his wallet."<< std::endl;
+  std::cout << "This customer has $" << newCustomer.getWalletAmount() << " dollars in his wallet."<< std::endl;
   std::cout << "This would be a purchase of $" << purchaseAmount << std::endl;
   std::cout << EmployeeArray[1].getName() << " (Cashier) helps at the register to ring up the purchase." << std::endl;
+
+  newCustomer.makePurchase(15);
+  std::cout << newCustomer.getWalletAmount() << std::endl; // This vaue should be previous walletAmount subtract book amount
+
+
+
+  // GUI or Menu function 1:
+  // Printing the User Receipts
+  /*
+  cout << "Would you like to print receipts? (y/n)"<< endl;
+
+  bool didUserAnswer = false;
+  while (!didUserAnswer){
+    cin >> printReceiptsDecision;
+    didUserAnswer = true;
+  }
+
+  if (printReceiptsDecision == 'y'){
+
+  }*/
 
   return 0;
 }

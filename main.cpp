@@ -214,6 +214,14 @@ int main() {
   newCustomer.setName("Gloria Bakerson");
   newCustomer.setWalletAmount(237);
 
+  Customer newCustomer2;
+  newCustomer.setName("Frederick Gilligan");
+  newCustomer.setWalletAmount(100);
+
+  Customer newCustomer3;
+  newCustomer.setName("Samantha Gilligan");
+  newCustomer.setWalletAmount(150);
+
   /* Customer wants to Make a Purchase*/
   int purchaseAmount = 15;
   std::string purchaseBookTitle = "The Grapes of Wrath";
@@ -223,6 +231,8 @@ int main() {
   book1.setTitle(purchaseBookTitle);
   book1.setAuthor(purchaseBookAuthor);
 
+  // Transaction should be a class object
+
   /* Print Transaction Details */
   std::cout << "This customer would like to purchase " << purchaseBookTitle << " written by " << purchaseBookAuthor << std::endl;
   std::cout << "This customer has $" << newCustomer.getWalletAmount() << " dollars in his wallet."<< std::endl;
@@ -231,8 +241,6 @@ int main() {
 
   newCustomer.makePurchase(15);
   std::cout << newCustomer.getWalletAmount() << std::endl; // This vaue should be previous walletAmount subtract book amount
-
-
 
   // GUI or Menu function 1:
   // Printing the User Receipts

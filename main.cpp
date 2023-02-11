@@ -145,32 +145,29 @@ class Customer {
 
 // Function: 
 // Params: 
-/*
-Employee * filterCashiersFromEmployeeList(Employee *EmployeeArray){
-  //int sizeEmployeeArray = sizeof(EmployeeArray)/sizeof(EmployeeArray[0]); // The size of the array, the number of employees
+Employee *filterCashiersFromEmployeeList(Employee EmployeeArray[]){
+  int sizeEmployeeArray = NUMBER_OF_EMPLOYEES;
   int count = 0;
 
-  for (int i=0; i<2; i++){
+  for (int i=0; i<sizeEmployeeArray; i++){
     if (EmployeeArray[i].getJobTitle() == "Cashier"){
       count++;
     }
   }
 
-  // These code blocks need fixing - 6/25/2022
-
-  static Employee cashiersArray[count]; //
+  Employee * CashiersArray = new Employee[count]; 
   int index = 0;
 
-  for (int i=0; i<2; i++){
+  for (int i=0; i<sizeEmployeeArray; i++){
     if (EmployeeArray[i].getJobTitle() == "Cashier"){
-      cashiersArray[index] = EmployeeArray[i];
+      CashiersArray[index] = EmployeeArray[i];
       index+=1;
     }
   }
 
-  return cashiersArray;
+  return CashiersArray;
 }
-*/
+
 
 void completeTransaction(Employee employee, Book book, Customer customer){
   /* Print Transaction Details */
@@ -219,9 +216,6 @@ int main() {
 
   std::cout << std::endl;
 
-  /* Filter Cashiers from Array */
-
-
   /* Add New Customer to the Database*/
   Customer newCustomer;
   newCustomer.setName("Gloria Bakerson");
@@ -265,6 +259,12 @@ int main() {
 
   /* Call completeTransaction() function */
   completeTransaction(EmployeeArray[1],book2,newCustomer2);
+
+  /* Filter Cashiers from Array */
+  Employee * CashiersArray;
+  CashiersArray = filterCashiersFromEmployeeList(EmployeeArray);
+
+  delete[] CashiersArray;
 
   // GUI or Menu function 1:
   // Printing the User Receipts

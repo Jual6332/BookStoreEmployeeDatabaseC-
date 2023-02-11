@@ -7,9 +7,9 @@ class Book {
   private:
     std::string title;
     std::string author;
+    std::string publisher;
     double cost;
     int year;
-    std::string publisher;
 
   public:
     /* Setter Methods*/
@@ -73,7 +73,7 @@ class Employee {
   }
 
   void setJobTitle(std::string role){
-    jobTitle = role;
+    jobTitle = role; 
   }
 
   void setTimeEmployedAtCompany(std::string time){
@@ -94,11 +94,11 @@ class Employee {
   }
 
   std::string getTimeEmployedAtCompany(){
-    return timeEmployedAtCompany; // Value in years
+    return timeEmployedAtCompany; // String value in years and months
   }
 
   int getSalary(){
-    return salary;
+    return salary; // Value in dollars
   }
 
 };
@@ -188,6 +188,7 @@ int main() {
 
   EmployeeArray[0] = newEmployee1;
   EmployeeArray[1] = newEmployee2;
+  //EmployeeArray[2] = newEmployee3;
 
   /* Print Employee Names*/
   for (int i=0; i<NUMBER_OF_EMPLOYEES;i++){
@@ -222,11 +223,13 @@ int main() {
   newCustomer.setName("Samantha Gilligan");
   newCustomer.setWalletAmount(150);
 
+  /* TRANSACTION 1 */
   /* Customer wants to Make a Purchase*/
   int purchaseAmount = 15;
   std::string purchaseBookTitle = "The Grapes of Wrath";
   std::string purchaseBookAuthor = "John Steinbeck";
 
+  /* Define Book */
   Book book1;
   book1.setTitle(purchaseBookTitle);
   book1.setAuthor(purchaseBookAuthor);
@@ -238,9 +241,8 @@ int main() {
   std::cout << "This customer has $" << newCustomer.getWalletAmount() << " dollars in his wallet."<< std::endl;
   std::cout << "This would be a purchase of $" << purchaseAmount << std::endl;
   std::cout << EmployeeArray[1].getName() << " (Cashier) helps at the register to ring up the purchase." << std::endl;
-
   newCustomer.makePurchase(15);
-  std::cout << newCustomer.getWalletAmount() << std::endl; // This vaue should be previous walletAmount subtract book amount
+  std::cout << "This customer has $" << newCustomer.getWalletAmount() << " dollars left in his wallet."<< std::endl; // This vaue should be previous walletAmount subtract book amount
 
   // GUI or Menu function 1:
   // Printing the User Receipts

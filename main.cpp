@@ -164,6 +164,7 @@ Employee * filterCashiersFromEmployeeList(Employee *EmployeeArray){
   for (int i=0; i<2; i++){
     if (EmployeeArray[i].getJobTitle() == "Cashier"){
       cashiersArray[index] = EmployeeArray[i];
+      index+=1;
     }
   }
 
@@ -216,12 +217,12 @@ int main() {
   newCustomer.setWalletAmount(237);
 
   Customer newCustomer2;
-  newCustomer.setName("Frederick Gilligan");
-  newCustomer.setWalletAmount(100);
+  newCustomer2.setName("Frederick Gilligan");
+  newCustomer2.setWalletAmount(100);
 
   Customer newCustomer3;
-  newCustomer.setName("Samantha Gilligan");
-  newCustomer.setWalletAmount(150);
+  newCustomer3.setName("Samantha Gilligan");
+  newCustomer3.setWalletAmount(150);
 
   /* TRANSACTION 1 */
   /* Customer wants to Make a Purchase*/
@@ -237,12 +238,35 @@ int main() {
   // Transaction should be a class object
 
   /* Print Transaction Details */
-  std::cout << "This customer would like to purchase " << purchaseBookTitle << " written by " << purchaseBookAuthor << std::endl;
+  std::cout << newCustomer.getName() <<" would like to purchase " << purchaseBookTitle << " written by " << purchaseBookAuthor << std::endl;
   std::cout << "This customer has $" << newCustomer.getWalletAmount() << " dollars in his wallet."<< std::endl;
   std::cout << "This would be a purchase of $" << purchaseAmount << std::endl;
   std::cout << EmployeeArray[1].getName() << " (Cashier) helps at the register to ring up the purchase." << std::endl;
-  newCustomer.makePurchase(15);
+  newCustomer.makePurchase(purchaseAmount);
   std::cout << "This customer has $" << newCustomer.getWalletAmount() << " dollars left in his wallet."<< std::endl; // This vaue should be previous walletAmount subtract book amount
+
+  std::cout << std::endl;
+
+  /* TRANSACTION 2 */
+  /* Customer wants to Make a Purchase*/
+  purchaseAmount = 22;
+  purchaseBookTitle = "The Great Gatsby";
+  purchaseBookAuthor = "F Scott Fitzgerald";
+
+  /* Define Book */
+  Book book2;
+  book2.setTitle(purchaseBookTitle);
+  book2.setAuthor(purchaseBookAuthor);
+
+  /* Print Transaction Details */
+  std::cout << newCustomer2.getName() <<"would like to purchase " << purchaseBookTitle << " written by " << purchaseBookAuthor << std::endl;
+  std::cout << "This customer has $" << newCustomer2.getWalletAmount() << " dollars in his wallet."<< std::endl;
+  std::cout << "This would be a purchase of $" << purchaseAmount << std::endl;
+  std::cout << EmployeeArray[1].getName() << " (Cashier) helps at the register to ring up the purchase." << std::endl;
+  newCustomer2.makePurchase(purchaseAmount);
+  std::cout << "This customer has $" << newCustomer2.getWalletAmount() << " dollars left in his wallet."<< std::endl; // This vaue should be previous walletAmount subtract book amount
+
+  std::cout << std::endl;
 
   // GUI or Menu function 1:
   // Printing the User Receipts

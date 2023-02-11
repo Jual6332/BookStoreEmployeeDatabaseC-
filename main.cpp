@@ -143,43 +143,11 @@ class Customer {
   }
 };
 
-// Function: 
-// Params: 
-Employee *filterCashiersFromEmployeeList(Employee EmployeeArray[]){
-  int sizeEmployeeArray = NUMBER_OF_EMPLOYEES;
-  int count = 0;
+// Function Prototypes
+void completeTransaction(Employee employee, Book book, Customer customer);
+Employee *filterCashiersFromEmployeeList(Employee EmployeeArray[])
 
-  for (int i=0; i<sizeEmployeeArray; i++){
-    if (EmployeeArray[i].getJobTitle() == "Cashier"){
-      count++;
-    }
-  }
-
-  Employee * CashiersArray = new Employee[count]; 
-  int index = 0;
-
-  for (int i=0; i<sizeEmployeeArray; i++){
-    if (EmployeeArray[i].getJobTitle() == "Cashier"){
-      CashiersArray[index] = EmployeeArray[i];
-      index+=1;
-    }
-  }
-
-  return CashiersArray;
-}
-
-
-void completeTransaction(Employee employee, Book book, Customer customer){
-  /* Print Transaction Details */
-  std::cout << customer.getName() <<" would like to purchase " << book.getTitle() << " written by " << book.getAuthor() << std::endl;
-  std::cout << "This customer has $" << customer.getWalletAmount() << " dollars in his wallet."<< std::endl;
-  std::cout << "This would be a purchase of $" << book.getCost() << std::endl;
-  std::cout << employee.getName() << " (Cashier) helps at the register to ring up the purchase." << std::endl;
-  customer.makePurchase(book.getCost());
-  std::cout << "This customer has $" << customer.getWalletAmount() << " dollars left in their wallet."<< std::endl; // This vaue should be previous walletAmount subtract book amount
-  std::cout << std::endl;
-}
-
+// Main Function
 int main() {
   Employee newEmployee1;
   newEmployee1.setName("Richard Sventhal");
@@ -282,4 +250,40 @@ int main() {
   }*/
 
   return 0;
+}
+
+void completeTransaction(Employee employee, Book book, Customer customer){
+  /* Print Transaction Details */
+  std::cout << customer.getName() <<" would like to purchase " << book.getTitle() << " written by " << book.getAuthor() << std::endl;
+  std::cout << "This customer has $" << customer.getWalletAmount() << " dollars in his wallet."<< std::endl;
+  std::cout << "This would be a purchase of $" << book.getCost() << std::endl;
+  std::cout << employee.getName() << " (Cashier) helps at the register to ring up the purchase." << std::endl;
+  customer.makePurchase(book.getCost());
+  std::cout << "This customer has $" << customer.getWalletAmount() << " dollars left in their wallet."<< std::endl; // This vaue should be previous walletAmount subtract book amount
+  std::cout << std::endl;
+}
+
+// Function: 
+// Params: 
+Employee *filterCashiersFromEmployeeList(Employee EmployeeArray[]){
+  int sizeEmployeeArray = NUMBER_OF_EMPLOYEES;
+  int count = 0;
+
+  for (int i=0; i<sizeEmployeeArray; i++){
+    if (EmployeeArray[i].getJobTitle() == "Cashier"){
+      count++;
+    }
+  }
+
+  Employee * CashiersArray = new Employee[count]; 
+  int index = 0;
+
+  for (int i=0; i<sizeEmployeeArray; i++){
+    if (EmployeeArray[i].getJobTitle() == "Cashier"){
+      CashiersArray[index] = EmployeeArray[i];
+      index+=1;
+    }
+  }
+
+  return CashiersArray;
 }
